@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Fotter from "./Fotter";
 
 export default function calculator() {
   const [num, setnum] = useState("");
@@ -7,7 +8,9 @@ export default function calculator() {
   };
   const getButtonClasses=(index)=>{
     if (index === 12) {
-        return 'bg-red-500 hover:bg-red-400 py-4  w-[450%] rounded-t-xl text-xl "'; // unique red style for clear button
+        return 'bg-red-500 hover:bg-red-400 py-4  w-[450%] rounded-t-xl text-xl '; // unique red style for clear button
+      }else if(index==11){
+         return 'bg-green-500 hover:bg-green-400 py-4  rounded-t-xl text-xl' // unique green style for "=" button
       }
       return " bg-sky-400 hover:bg-sky-500  rounded-t-xl text-xl py-4"; // default blue style for other buttons
     };
@@ -64,6 +67,7 @@ export default function calculator() {
             ))}
           </div>
         </div>
+        <Fotter />
       </div>
     </>
   );
